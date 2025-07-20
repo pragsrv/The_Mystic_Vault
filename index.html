@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mystic Vault - A Riddle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Game Header -->
+        <header>
+            <h1 id="game-title">The Mystic Vault</h1>
+            <div id="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main id="game-area">
+            <!-- Story Text Display -->
+            <div id="story-text">
+                <p>You stand before an ancient vault. Strange symbols glow faintly on the walls. 
+                The air hums with mysterious energy. To unlock its secrets, you must solve the riddles within...</p>
+            </div>
+
+            <!-- Puzzle Container -->
+            <div id="puzzle-container">
+                <!-- Puzzle 1: Hidden Symbol Discovery -->
+                <div class="puzzle-stage" id="puzzle-1">
+                    <h2>The Awakening</h2>
+                    <p class="riddle-text">*Seek what cannot be seen, for only the persistent shall find the first key.*</p>
+                    <div class="interactive-area">
+                        <div id="hidden-symbol" class="clickable hidden-element">⚡</div>
+                        <div class="decoration">🌙</div>
+                        <div class="decoration">⭐</div>
+                        <div class="red-herring clickable">💎</div>
+                    </div>
+                </div>
+
+                <!-- Puzzle 2: Sequence Challenge -->
+                <div class="puzzle-stage" id="puzzle-2" style="display: none;">
+                    <h2>The Pattern</h2>
+                    <p class="riddle-text">*Follow the celestial dance: Moon, Star, Sun, Comet. Only the correct order shall open the way.*</p>
+                    <div class="interactive-area">
+                        <div class="sequence-item clickable" data-order="1">🌙</div>
+                        <div class="sequence-item clickable" data-order="2">⭐</div>
+                        <div class="sequence-item clickable" data-order="3">☀️</div>
+                        <div class="sequence-item clickable" data-order="4">☄️</div>
+                    </div>
+                    <div id="sequence-feedback"></div>
+                </div>
+
+                <!-- Puzzle 3: Transformation Challenge -->
+                <div class="puzzle-stage" id="puzzle-3" style="display: none;">
+                    <h2>The Evolution</h2>
+                    <p class="riddle-text">*What begins as seed must be nurtured through patience. Click to witness the cycle of growth.*</p>
+                    <div class="interactive-area">
+                        <div id="transformation-element" class="clickable transformation-stage-0">🌱</div>
+                        <div class="transformation-counter">Clicks: <span id="click-counter">0</span></div>
+                    </div>
+                </div>
+
+                <!-- Puzzle 4: Color Harmony -->
+                <div class="puzzle-stage" id="puzzle-4" style="display: none;">
+                    <h2>The Harmony</h2>
+                    <p class="riddle-text">*Three colors must unite in perfect harmony. Find the balance where all energies converge.*</p>
+                    <div class="interactive-area color-puzzle">
+                        <div class="color-orb clickable" data-color="red" id="red-orb">🔴</div>
+                        <div class="color-orb clickable" data-color="blue" id="blue-orb">🔵</div>
+                        <div class="color-orb clickable" data-color="green" id="green-orb">🟢</div>
+                        <div id="harmony-indicator"></div>
+                    </div>
+                </div>
+
+                <!-- Puzzle 5: Final Riddle -->
+                <div class="puzzle-stage" id="puzzle-5" style="display: none;">
+                    <h2>The Truth</h2>
+                    <p class="riddle-text">*I am the beginning and the end. I hold all knowledge yet remain empty. What am I?*</p>
+                    <div class="interactive-area">
+                        <div class="riddle-option clickable" data-answer="wrong">📚</div>
+                        <div class="riddle-option clickable" data-answer="wrong">🧠</div>
+                        <div class="riddle-option clickable" data-answer="correct">⭕</div>
+                        <div class="riddle-option clickable" data-answer="wrong">🔍</div>
+                    </div>
+                    <div id="riddle-hint"></div>
+                </div>
+
+                <!-- Victory Screen -->
+                <div class="puzzle-stage" id="victory" style="display: none;">
+                    <h2>The Vault is Yours</h2>
+                    <div class="victory-content">
+                        <div class="treasure">💎✨🏆✨💎</div>
+                        <p>Congratulations, seeker of mysteries! You have unlocked the secrets of the Mystic Vault. 
+                        Within its depths lie not gold or jewels, but the greatest treasure of all - the satisfaction of a mind that seeks and finds.</p>
+                        <button id="restart-btn" class="clickable">Begin Another Journey</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Game UI -->
+        <footer>
+            <div id="hint-system">
+                <button id="hint-btn" class="clickable">Reveal Hint</button>
+                <div id="hint-text"></div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
